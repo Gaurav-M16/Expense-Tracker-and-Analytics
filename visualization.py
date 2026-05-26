@@ -4,5 +4,7 @@ import seaborn as sns
 
 data = pd.read_csv('data/expenses_tracker.csv')
 print(data)
-plt.plot(data['amount'])
+# plt.plot(data['amount'])
+# plt.show()
+sns.barplot(x=data['category'], y=data['amount'])
 plt.show()
