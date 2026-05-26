@@ -27,3 +27,16 @@ class Expense:
         ))
         conn.commit()
         conn.close()
+    
+    @staticmethod
+    def view_expenses():
+        conn = get_connection()
+        cursor = conn.cursor()
+        statement = """SELECT * FROM expenses"""
+        cursor.execute(statement)
+        output_all = cursor.fetchall()
+        for row in output_all:
+            print(row)
+
+        conn.commit()
+        conn.close()
