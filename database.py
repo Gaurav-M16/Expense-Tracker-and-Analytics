@@ -1,18 +1,26 @@
 import sqlite3
 
-conn = sqlite3.connect("data/expenses.db")
 
-cursor = conn.cursor()
-cursor.execute("""
-CREATE TABLE IF NOT EXISTS expenses(
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-               category TEXT,
-               amount REAL,
-               data TEXT,
-               payment_method TEXT,
-               note TEXT)
+def get_connection():
+    conn = sqlite3.connect("data/expenses.db")
+    return conn
 
-""")
 
-conn.commit()
-conn.close()
+def create_table():
+
+    conn = get_connection()
+    cursor = conn.cursor()
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS expenses(
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        category TEXT,
+        amount REAL,
+        date TEXT,
+        payment_method TEXT,
+        note TEXT
+    )
+    """)
+
+    conn.commit()
+    conn.close()
