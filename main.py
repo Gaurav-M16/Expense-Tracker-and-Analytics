@@ -1,5 +1,7 @@
 import time
+import os
 from expense import Expense
+from file_handler import export_csv
 from database import create_table
 
 create_table()
@@ -24,6 +26,14 @@ while True:
         elif opt == 2:
             Expense.view_expenses()
             time.sleep(1)
+        elif opt == 3:
+            file_name = "expenses_tracker.csv"
+            ans = os.path.exists(file_name)
+            if ans == True:
+                print("File already exist")
+            else:
+                export_csv()
+
 
         
 
