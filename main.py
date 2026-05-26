@@ -3,6 +3,7 @@ import os
 from expense import Expense
 from file_handler import export_csv
 from database import create_table
+from analytics import show_analysis
 
 create_table()
 
@@ -33,6 +34,8 @@ while True:
                 print("File already exist")
             else:
                 export_csv()
+        elif opt == 4:
+            show_analysis()
 
 
         
