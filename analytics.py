@@ -1,6 +1,9 @@
 import pandas as pd
 
 def show_analysis():
+    '''
+    function that do basic analysis
+    '''
     df = pd.read_csv("data/expenses_tracker.csv")
     total_spending = df['amount'].sum()
     avg_spending = df['amount'].mean()
