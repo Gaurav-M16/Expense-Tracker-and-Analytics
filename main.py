@@ -41,10 +41,9 @@ while True:
             animation("Analyzing data")
             show_analysis()
         elif opt == 5:
+            animation("Generating charts")
             visualization()
-
-        
-
+            print("Done!")
         elif opt == 6:
             break 
 
