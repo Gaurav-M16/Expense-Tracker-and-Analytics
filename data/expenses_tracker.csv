@@ -2,3 +2,5 @@ id,category,amount,date,payment_method,note
 1,Food,250.0,2026-05-26,Cash,eating
 2,Travel,500.0,2026-05-26,Card,Travelling
 3,Shopping,45000.0,2026-05-20,Upi,
+4,Travel,230.0,,Cash,
+5,Travel,2307.0,2026-04-16,Upi,Party
