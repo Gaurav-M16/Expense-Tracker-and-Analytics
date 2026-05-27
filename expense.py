@@ -7,11 +7,11 @@ class Expense:
         print(f"Hello, {self.name}")
 
     @staticmethod
-    def add_expenses(category=None,
-                    amount=None, 
-                    date=None, 
-                    payment_method=None, 
-                    note=None):
+    def add_expenses(category,
+                    amount, 
+                    date, 
+                    payment_method, 
+                    note):
         conn = get_connection()
         cursor = conn.cursor()
         cursor.execute("""
