@@ -1,5 +1,4 @@
 import time
-import os
 from expense import Expense
 from file_handler import export_csv
 from database import create_table
@@ -9,13 +8,16 @@ from visualization import visualization
 
 create_table()
 
-
+print('===============================')
 print("📈💰📊Welcome to Expense Tracker📈💰📊")
+print('===============================')
 name = input("Enter your name: ").capitalize()
+obj = Expense(name)
 
 while True:
-    obj = Expense(name)
+    print('===============================')
     print("Press\n1. Add expense\n2. View expense\n3. Export CSV\n4. Show analytics\n5. Generate charts\n6. Exit")
+    print('===============================')
     try:
         opt = int(input("Your option: "))
         if opt == 1:
@@ -39,6 +41,7 @@ while True:
             print("\nExport done")
         elif opt == 4:
             animation("Analyzing data")
+            print('\n')
             show_analysis()
         elif opt == 5:
             animation("Generating charts")
