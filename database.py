@@ -2,11 +2,14 @@ import sqlite3
 
 
 def get_connection():
+    '''building connection'''
+    
     conn = sqlite3.connect("data/expenses.db")
     return conn
 
 
 def create_table():
+    '''creating table'''
 
     conn = get_connection()
     cursor = conn.cursor()
