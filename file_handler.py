@@ -5,7 +5,7 @@ conn = get_connection()
 
 def export_csv():
     df = pd.read_sql_query("SELECT * FROM expenses", conn)
-    df.to_csv("data/expenses_tracker.csv", index=False)
+    df.to_csv("data/expenses_tracker.csv", index=False) #Convert the database into CSV and save to following location
     conn.commit()
     conn.close()
 
