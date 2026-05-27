@@ -6,13 +6,13 @@ from analytics import show_analysis
 from animation import animation
 from visualization import visualization
 
-create_table()
+create_table() #Create table at start if not exist
 
 print('===============================')
 print("📈💰📊Welcome to Expense Tracker📈💰📊")
 print('===============================')
 name = input("Enter your name: ").capitalize()
-obj = Expense(name)
+obj = Expense(name) #Take input and send it to the Expense class
 
 while True:
     print('===============================')
@@ -29,6 +29,7 @@ while True:
             animation("Adding expenses")
             Expense.add_expenses(category, amount, date, payment_method, note)
             print("\nExpenses added!")
+            time.sleep(1)
         elif opt == 2:
             animation("Loading expenses")
             print('\n')
@@ -39,14 +40,17 @@ while True:
             print('\n')
             export_csv()
             print("\nExport done")
+            time.sleep(1)
         elif opt == 4:
             animation("Analyzing data")
             print('\n')
             show_analysis()
+            time.sleep(1)
         elif opt == 5:
             animation("Generating charts")
             visualization()
             print("Done!")
+            time.sleep(1)
         elif opt == 6:
             break 
 
