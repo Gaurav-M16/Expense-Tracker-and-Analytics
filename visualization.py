@@ -11,6 +11,6 @@ def visualization():
     sns.barplot(x=data['category'], y=data['amount'])
 
     plt.subplot(1,2,2)
-    plt.title("Category where most expenses are spent")
+    plt.title("Count of categories where most expenses are spent")
     sns.countplot(data=data, x=data['category'])
     plt.show()
