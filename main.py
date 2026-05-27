@@ -4,6 +4,7 @@ from expense import Expense
 from file_handler import export_csv
 from database import create_table
 from analytics import show_analysis
+from animation import animation
 
 create_table()
 
@@ -22,21 +23,24 @@ while True:
             date = input("Enter date(2026-01-01 format): ")
             payment_method = input("Enter payment method(Cash, Card, UPI): ").capitalize()
             note = input("Enter where money spent: ").capitalize()
+            animation("Adding expenses")
             Expense.add_expenses(category, amount, date, payment_method, note)
-            time.sleep(1)
+            print("\nExpenses added!")
         elif opt == 2:
+            animation("Loading expenses")
+            print('\n')
             Expense.view_expenses()
             time.sleep(1)
         elif opt == 3:
-            file_name = "expenses_tracker.csv"
-            ans = os.path.exists(file_name)
-            if ans == True:
-                print("File already exist")
-            else:
-                export_csv()
+            animation("Exporting CSV")
+            print('\n')
+            export_csv()
+            print("\nExport done")
         elif opt == 4:
+            animation("Analyzing data")
             show_analysis()
-
+        elif opt == 5:
+            pass
 
         
 
