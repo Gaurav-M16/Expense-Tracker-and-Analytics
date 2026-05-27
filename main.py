@@ -5,6 +5,7 @@ from file_handler import export_csv
 from database import create_table
 from analytics import show_analysis
 from animation import animation
+from visualization import visualization
 
 create_table()
 
@@ -40,7 +41,7 @@ while True:
             animation("Analyzing data")
             show_analysis()
         elif opt == 5:
-            pass
+            visualization()
 
         
 
