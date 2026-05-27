@@ -6,7 +6,7 @@ class Expense:
         self.name = name
         print(f"Hello, {self.name}")
 
-    @staticmethod
+    @staticmethod 
     def add_expenses(category,
                     amount, 
                     date, 
@@ -33,8 +33,8 @@ class Expense:
         conn = get_connection()
         cursor = conn.cursor()
         statement = """SELECT * FROM expenses"""
-        cursor.execute(statement)
-        output_all = cursor.fetchall()
+        cursor.execute(statement) 
+        output_all = cursor.fetchall() #Fetch entire rows
         for row in output_all:
             print(row)
 
